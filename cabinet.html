@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-protected="user">
+  <header class="header">
+    <div class="logo-box">
+      <img src="images/logo.png" alt="Логотип" class="logo-image" onerror="this.src='https://placehold.co/48x48'">
+      <a href="index.html" class="logo">Корочки<span>.есть</span></a>
+    </div>
+    <nav class="nav">
+      <a href="request.html">Новая заявка</a>
+      <button class="link-button" id="logoutBtn">Выйти</button>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- СЛАЙДЕР – ТРИ ФОТОГРАФИИ С АВТОПЕРЕЛИСТЫВАНИЕМ КАЖДЫЕ 3 СЕКУНДЫ -->
+    <div class="slider-container">
+      <div class="slider-wrapper">
+        <div class="slider-track" id="sliderTrack">
+          <div class="slide"><img src="images/1.jpg" alt="Обучение"></div>
+          <div class="slide"><img src="images/2.jpg" alt="Курсы"></div>
+          <div class="slide"><img src="images/3.jpg" alt="Студенты"></div>
+        </div>
+        <button class="slider-prev" id="prevSlide">❮</button>
+        <button class="slider-next" id="nextSlide">❯</button>
+      </div>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+
+    <!-- БЛОК С ЗАЯВКАМИ ПОЛЬЗОВАТЕЛЯ -->
+    <div class="requests" id="userRequests"></div>
+  </main>
+  
+  <footer class="footer">
+    <div class="footer-content">
+      <img src="images/footer-image.jpg" alt="Картинка" class="footer-image" onerror="this.src='https://placehold.co/220x130'">
+      <div class="footer-text">
+        <h3>Корочки.есть</h3>
+        <p>Система подачи заявок на образовательные курсы.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

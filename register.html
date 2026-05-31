@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo-box">
+      <img src="images/logo.png" alt="Логотип" class="logo-image" onerror="this.src='https://placehold.co/48x48'">
+      <a href="index.html" class="logo">Корочки<span>.есть</span></a>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Авторизация</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="form-card">
+      <h1>Регистрация</h1>
+      <form id="registerForm">
+        <div class="field">
+          <label>Логин</label>
+          <input id="regLogin" type="text" minlength="6" placeholder="Минимум 6 символов" required>
+        </div>
+        <div class="field">
+          <label>Пароль</label>
+          <input id="regPassword" type="password" minlength="8" placeholder="Минимум 8 символов" required>
+        </div>
+        <div class="field">
+          <label>ФИО</label>
+          <input id="regFio" type="text" placeholder="Иванов Иван Иванович" required>
+        </div>
+        <div class="field">
+          <label>Телефон</label>
+          <input id="regPhone" type="tel" placeholder="89999999999" required>
+        </div>
+        <div class="field">
+          <label>Почта</label>
+          <input id="regEmail" type="email" placeholder="mail@example.com" required>
+        </div>
+        <button class="btn">Создать аккаунт</button>
+        <p class="message" id="registerMessage"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <img src="images/footer-image.jpg" alt="Картинка" class="footer-image" onerror="this.src='https://placehold.co/220x130'">
+      <div class="footer-text">
+        <h3>Корочки.есть</h3>
+        <p>Система подачи заявок на образовательные курсы.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

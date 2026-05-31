@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Создание заявки</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-protected="user">
+
+<header class="header">
+<div class="logo-box">
+<img src="images/logo.png" alt="Логотип" class="logo-image">
+<a href="index.html" class="logo">Корочки<span>.есть</span></a>
+</div>
+
+<nav class="nav">
+<a href="cabinet.html">Мои заявки</a>
+<button class="link-button" id="logoutBtn">Выйти</button>
+</nav>
+</header>
+
+<main class="page">
+
+<section class="form-card">
+<h1>Формирование заявки</h1>
+
+<form id="requestForm">
+
+<div class="field">
+<label>Название курса</label>
+
+<select id="course" required>
+<option value="">Выберите курс</option>
+<option>Веб-разработка</option>
+<option>Графический дизайн</option>
+<option>Python</option>
+</select>
+</div>
+
+<div class="field">
+<label>Дата обучения</label>
+<input id="startDate" type="text" placeholder="ДД.ММ.ГГГГ" required>
+</div>
+
+<div class="field">
+<label>Оплата</label>
+
+<div class="radio-group">
+<label><input type="radio" name="payment" value="Наличные" required> Наличные</label>
+<label><input type="radio" name="payment" value="Перевод"> Перевод</label>
+</div>
+</div>
+
+<button class="btn">Отправить заявку</button>
+
+<p class="message" id="requestMessage"></p>
+
+</form>
+</section>
+</main>
+
+<footer class="footer">
+<div class="footer-content">
+<img src="images/footer-image.jpg" alt="Картинка" class="footer-image">
+
+<div class="footer-text">
+<h3>Корочки.есть</h3>
+<p>Система подачи заявок на образовательные курсы.</p>
+</div>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

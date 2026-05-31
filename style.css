@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: #0a0a0a;
+    color: #e5e5e5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Шапка */
+.header {
+    background: #111;
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-bottom: 1px solid #ff5722;
+}
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo-image {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    object-fit: cover;
+    filter: brightness(1.1);
+}
+.logo {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff5722;
+}
+.logo span {
+    color: #ccc;
+}
+.nav {
+    display: flex;
+    gap: 12px;
+}
+.nav a, .link-button {
+    background: #ff5722;
+    color: #0a0a0a;
+    padding: 8px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.nav a:hover, .link-button:hover {
+    background: #ff784e;
+    transform: scale(0.97);
+}
+
+/* Основной блок */
+.page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
+    flex: 1;
+}
+
+/* Формы */
+.form-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    border-radius: 24px;
+    padding: 28px;
+    border: 1px solid #ff5722;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.form-card h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #ff5722;
+}
+.field {
+    margin-bottom: 18px;
+}
+.field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #bbb;
+}
+.field input, .field select {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    background: #222;
+    color: #eee;
+}
+.radio-group {
+    display: flex;
+    gap: 16px;
+    margin-top: 6px;
+}
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #222;
+    padding: 6px 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #ddd;
+}
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff5722;
+    color: #0a0a0a;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.btn:hover {
+    background: #ff784e;
+}
+.message {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Карточки заявок */
+.requests {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.request-card {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 18px;
+    border-left: 4px solid #ff5722;
+    transition: 0.2s;
+}
+.request-card:hover {
+    transform: translateY(-3px);
+    background: #222;
+}
+.request-card h3 {
+    color: #ff784e;
+    margin-bottom: 8px;
+}
+
+/* Статусы */
+.status-Новая { color: #ffaa44; }
+.status-Идетобучение { color: #44aaff; }
+.status-Обучениезавершено { color: #44ff88; }
+
+/* Слайдер */
+.slider-container {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid #ff5722;
+}
+.slider-track {
+    display: flex;
+    transition: transform 0.4s;
+}
+.slide {
+    flex: 0 0 100%;
+}
+.slide img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+.slider-prev, .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: #ff5722;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+.slider-prev { left: 10px; }
+.slider-next { right: 10px; }
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    background: #444;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slider-dot.active {
+    background: #ff5722;
+}
+
+/* Админка */
+.admin-panel {
+    background: #0f0f0f;
+    border-radius: 24px;
+    padding: 20px;
+    border: 1px solid #2a2a2a;
+}
+.filter-bar {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+.filter-bar input, .filter-bar select {
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #eee;
+    flex: 1;
+    min-width: 150px;
+}
+.admin-requests .request-card {
+    background: #1a1a1a;
+}
+.admin-requests select {
+    margin-left: 8px;
+    padding: 4px 10px;
+    border-radius: 30px;
+    background: #2a2a2a;
+    color: #eee;
+    border: none;
+}
+#pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+#pagination button {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ddd;
+    padding: 6px 12px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#pagination button.active {
+    background: #ff5722;
+    color: #0a0a0a;
+    border-color: #ff5722;
+}
+
+/* Футер */
+.footer {
+    margin-top: 50px;
+    background: #111;
+    border-top: 1px solid #ff5722;
+    padding: 24px 20px;
+    text-align: center;
+}
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.footer-image {
+    width: 140px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 16px;
+    filter: brightness(0.8);
+}
+.footer-text h3 {
+    font-size: 20px;
+    color: #ff784e;
+}
+.footer-text p {
+    color: #888;
+}
+
+/* Адаптив */
+@media (max-width: 700px) {
+    .header {
+        flex-direction: column;
+        padding: 14px;
+    }
+    .page {
+        padding: 0 16px;
+    }
+    .slide img {
+        height: 180px;
+    }
+    .filter-bar {
+        flex-direction: column;
+    }
+    .requests {
+        grid-template-columns: 1fr;
+    }
+}
