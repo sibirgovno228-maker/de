@@ -141,33 +141,98 @@ body {
     text-align: center;
     font-size: 14px;
 }
+.message.success { color: #4caf50; }
+.message.fail { color: #ff4444; }
 
-/* Карточки заявок */
-.requests {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+/* Таблицы заявок (личный кабинет) */
+.requests-table, .admin-table {
+    width: 100%;
+    background: #1a1a1a;
+    border-collapse: collapse;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
-.request-card {
+.requests-table th, .admin-table th,
+.requests-table td, .admin-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #2a2a2a;
+}
+.requests-table th, .admin-table th {
+    background: #222;
+    color: #ff784e;
+    font-weight: 600;
+}
+.requests-table td, .admin-table td {
+    color: #ddd;
+    vertical-align: top;
+}
+.review-cell button, .review-btn, .submit-review, .save-status {
+    background: #ff5722;
+    border: none;
+    color: #0a0a0a;
+    padding: 6px 12px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 4px 0;
+}
+.review-form {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+}
+.review-form textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 16px;
+    background: #222;
+    border: 1px solid #ff5722;
+    color: #eee;
+}
+.empty-requests {
+    text-align: center;
+    padding: 30px;
     background: #1a1a1a;
     border-radius: 20px;
-    padding: 18px;
-    border-left: 4px solid #ff5722;
-    transition: 0.2s;
-}
-.request-card:hover {
-    transform: translateY(-3px);
-    background: #222;
-}
-.request-card h3 {
-    color: #ff784e;
-    margin-bottom: 8px;
+    color: #aaa;
 }
 
-/* Статусы */
-.status-Новая { color: #ffaa44; }
-.status-Идетобучение { color: #44aaff; }
-.status-Обучениезавершено { color: #44ff88; }
+/* Админ панель */
+.admin-panel {
+    background: #0f0f0f;
+    border-radius: 24px;
+    padding: 20px;
+    border: 1px solid #2a2a2a;
+}
+.status-select {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #2a2a2a;
+    color: #eee;
+    border: 1px solid #ff5722;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.pagination button {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ddd;
+    padding: 6px 12px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.pagination button.active {
+    background: #ff5722;
+    color: #0a0a0a;
+    border-color: #ff5722;
+}
 
 /* Слайдер */
 .slider-container {
@@ -182,7 +247,7 @@ body {
 }
 .slider-track {
     display: flex;
-    transition: transform 0.4s;
+    transition: transform 0.4s ease;
 }
 .slide {
     flex: 0 0 100%;
@@ -222,59 +287,6 @@ body {
 }
 .slider-dot.active {
     background: #ff5722;
-}
-
-/* Админка */
-.admin-panel {
-    background: #0f0f0f;
-    border-radius: 24px;
-    padding: 20px;
-    border: 1px solid #2a2a2a;
-}
-.filter-bar {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-}
-.filter-bar input, .filter-bar select {
-    padding: 8px 16px;
-    border-radius: 30px;
-    border: 1px solid #333;
-    background: #1a1a1a;
-    color: #eee;
-    flex: 1;
-    min-width: 150px;
-}
-.admin-requests .request-card {
-    background: #1a1a1a;
-}
-.admin-requests select {
-    margin-left: 8px;
-    padding: 4px 10px;
-    border-radius: 30px;
-    background: #2a2a2a;
-    color: #eee;
-    border: none;
-}
-#pagination {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 24px;
-}
-#pagination button {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    color: #ddd;
-    padding: 6px 12px;
-    border-radius: 30px;
-    cursor: pointer;
-}
-#pagination button.active {
-    background: #ff5722;
-    color: #0a0a0a;
-    border-color: #ff5722;
 }
 
 /* Футер */
@@ -319,10 +331,14 @@ body {
     .slide img {
         height: 180px;
     }
-    .filter-bar {
-        flex-direction: column;
+    .requests-table, .admin-table {
+        font-size: 12px;
     }
-    .requests {
-        grid-template-columns: 1fr;
+    .requests-table th, .admin-table th,
+    .requests-table td, .admin-table td {
+        padding: 8px 5px;
+    }
+    .pagination button {
+        padding: 4px 8px;
     }
 }
